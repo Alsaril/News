@@ -5,11 +5,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v4.content.LocalBroadcastManager;
 
-import static com.example.igor.news.utility.Const.ACTION_REQUEST;
-import static com.example.igor.news.utility.Const.ACTION_RESULT;
-
 
 public class NewsIntentService extends IntentService {
+
+    public static final String ACTION_REQUEST = "action.news_request";
+    public static final String ACTION_RESULT = "action.news_result";
 
     public NewsIntentService() {
         super("News Intent Service");

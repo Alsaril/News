@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NewsServiceHelper
         content = (TextView) findViewById(R.id.content);
         date = (TextView) findViewById(R.id.date);
         update = (Button) findViewById(R.id.update);
-        final Button settings = (Button) findViewById(R.id.settings);
+        Button settings = (Button) findViewById(R.id.settings);
 
         update.setOnClickListener(new View.OnClickListener() {
             @Override

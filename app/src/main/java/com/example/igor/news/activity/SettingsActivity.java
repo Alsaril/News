@@ -21,14 +21,14 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.setting_activity);
+        setContentView(R.layout.settings_activity);
 
         final Storage storage = Storage.getInstance(this);
 
         String selected = storage.loadCurrentTopic();
         boolean update = storage.loadIsUpdateInBg();
 
-        final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.cities);
+        final RadioGroup radioGroup = (RadioGroup) findViewById(R.id.topics);
         for (int i = 0; i < Topics.ALL_TOPICS.length; i++) {
             RadioButton rb = new RadioButton(this);
             rb.setText(Topics.ALL_TOPICS[i]);

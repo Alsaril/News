@@ -6,8 +6,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v4.content.LocalBroadcastManager;
 
-import static com.example.igor.news.utility.Const.ACTION_REQUEST;
-import static com.example.igor.news.utility.Const.ACTION_RESULT;
+import static com.example.igor.news.NewsIntentService.ACTION_REQUEST;
+import static com.example.igor.news.NewsIntentService.ACTION_RESULT;
 
 public class NewsServiceHelper {
 
@@ -15,14 +15,6 @@ public class NewsServiceHelper {
     private static Intent serviceIntent;
 
     private NewsResultListener callback = null;
-
-    public static synchronized NewsServiceHelper getInstance(Context context) {
-        if (instance == null) {
-            instance = new NewsServiceHelper(context);
-            serviceIntent = new Intent(context, NewsIntentService.class).setAction(ACTION_REQUEST);
-        }
-        return instance;
-    }
 
     private NewsServiceHelper(Context context) {
         IntentFilter filter = new IntentFilter();
@@ -36,6 +28,14 @@ public class NewsServiceHelper {
                 }
             }
         }, filter);
+    }
+
+    public static synchronized NewsServiceHelper getInstance(Context context) {
+        if (instance == null) {
+            instance = new NewsServiceHelper(context);
+            serviceIntent = new Intent(context, NewsIntentService.class).setAction(ACTION_REQUEST);
+        }
+        return instance;
     }
 
     public void setCallback(NewsResultListener callback) {
