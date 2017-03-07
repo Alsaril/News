@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">News</string>
+    <string name="update_button_text">Update</string>
+    <string name="settings_button_text">Settings</string>
+    <string name="background">Background update</string>
+    <string name="save">Save</string>
+    <string name="select_error">Select topic</string>
+    <string name="content">Content</string>
+    <string name="load_error">There are no news</string>
+    <string name="network_error">Network error</string>
+
+</resources>
